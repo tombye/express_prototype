@@ -26,9 +26,10 @@ app.get('/', function (req, res) {
 
   var head = commonHead;
 
-  res.render('index',
-            {'pageTitle': 'index',
-            'head' : head });
+  res.render('index', {
+            'pageTitle': 'index',
+            'head' : head 
+            });
   
 });
 
@@ -36,9 +37,30 @@ app.get('/sample', function (req, res) {
   
   var head = commonHead;
 
-  res.render('sample',
-            {'pageTitle': 'sample',
-            'head' : head });
+  res.render('sample', {
+            'pageTitle': 'sample',
+            'head' : head 
+            });
+});
+
+app.get('/search_results.html', function (req, res) {
+  
+  var head = commonHead;
+
+  res.render('search_results.html', {
+            'pageTitle': 'Search results',
+            'head' : head 
+            });
+});
+
+app.get('/listing.html', function (req, res) {
+  
+  var head = commonHead;
+
+  res.render('listing.html', {
+            'pageTitle': 'Listing page',
+            'head' : head 
+            });
 });
 
 // start the app
