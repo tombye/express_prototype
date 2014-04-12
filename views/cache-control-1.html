@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Cache control test page 1</title>
+  </head>
+  <body>
+    <form action="cache-control-2" method="POST">
+      <h1>Who are you?</h1>
+      <label for="firstName">
+        First name
+        <input type="text" autocomplete="off" name="firstName" id="firstName" value="{{firstName}}" />
+      </label>
+      <label for="lastName">
+        Last name
+        <input type="text" autocomplete="off" name="lastName" id="lastName" value="{{lastName}}" />
+      </label>
+      <label for="age">
+        Age
+        <input type="text" autocomplete="off" name="age" id="age" value="{{age}}" />
+      </label>
+      <input type="submit" value="Continue" />
+    </form>
+  </body>
+</html>

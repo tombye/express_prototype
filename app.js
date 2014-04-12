@@ -13,6 +13,10 @@ app.set('views', __dirname + '/views');
 app.use('/public', express.static(__dirname + '/public'));
 app.use('/public', express.static(__dirname + '/govuk/public'));
 
+app.use(express.urlencoded());
+app.use(express.cookieParser());
+app.use(express.session({secret: '1234567890QWERTY'}));
+
 // routes (found in routes.js)
 
 routes.bind(app, '/public/');
