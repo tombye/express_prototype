@@ -54,6 +54,7 @@ module.exports = {
       if (req.param('age')) {
         req.session.age = req.param('age');
       }
+      res.header('Cache-Control', 'no-cache, max-age=0, must-revalidate, no-store');
       res.redirect('/cache-control-2');
     });
 
@@ -74,6 +75,7 @@ module.exports = {
       if (req.param('dogAge')) {
         req.session.dogAge = req.param('dogAge');
       }
+      res.header('Cache-Control', 'no-cache, max-age=0, must-revalidate, no-store');
       res.redirect('/cache-control-final');
     });
 
