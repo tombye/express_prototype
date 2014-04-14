@@ -45,8 +45,6 @@ module.exports = {
     });
 
     app.post('/cache-control-2', function (req, res) {
-      dataObj = {'assetPath' : assetPath};
-
       if (req.param('firstName')) {
         req.session.firstName = req.param('firstName');
       }
@@ -56,22 +54,31 @@ module.exports = {
       if (req.param('age')) {
         req.session.age = req.param('age');
       }
+      res.redirect('/cache-control-2');
+    });
+
+    app.get('/cache-control-2', function (req, res) {
+      dataObj = {'assetPath' : assetPath};
+
       for (var prop in req.session) {
         dataObj[prop] = req.session[prop];
       }
       res.header('Cache-Control', 'no-cache, max-age=0, must-revalidate, no-store');
       res.render('cache-control-2.html', dataObj);
-    });
+    })
 
     app.post('/cache-control-final', function (req, res) {
-      dataObj = {'assetPath' : assetPath};
-
       if (req.param('dogName')) {
         req.session.dogName = req.param('dogName');
       }
       if (req.param('dogAge')) {
         req.session.dogAge = req.param('dogAge');
       }
+      res.redirect('/cache-control-final');
+    });
+
+    app.get('/cache-control-final', function (req, res) {
+      dataObj = {'assetPath' : assetPath};
       for (var prop in req.session) {
         dataObj[prop] = req.session[prop];
       }
