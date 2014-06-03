@@ -40,6 +40,12 @@ module.exports = {
       for (var prop in req.session) {
         dataObj[prop] = req.session[prop];
       }
+      if (dataObj.selfImage) {
+        dataObj.selfImage1 = 'checked="checked"';
+      }
+      if (dataObj.selfImage) {
+        dataObj.selfImage1 = 'checked="checked"';
+      }
       res.header('Cache-Control', 'no-cache, max-age=0, must-revalidate, no-store');
       res.render('cache-control-1.html', dataObj);
     });
@@ -51,8 +57,8 @@ module.exports = {
       if (req.param('lastName')) {
         req.session.lastName = req.param('lastName');
       }
-      if (req.param('age')) {
-        req.session.age = req.param('age');
+      if (req.param('selfImage')) {
+        req.session.selfImage = req.param('selfImage');
       }
       res.header('Cache-Control', 'no-cache, max-age=0, must-revalidate, no-store');
       res.redirect('/cache-control-2');
@@ -64,6 +70,12 @@ module.exports = {
       for (var prop in req.session) {
         dataObj[prop] = req.session[prop];
       }
+      if (dataObj.dogImage1) {
+        dataObj.dogImage1 = 'checked="checked"';
+      }
+      if (dataObj.dogImage2) {
+        dataObj.dogImage2 = 'checked="checked"';
+      }
       res.header('Cache-Control', 'no-cache, max-age=0, must-revalidate, no-store');
       res.render('cache-control-2.html', dataObj);
     })
@@ -74,6 +86,12 @@ module.exports = {
       }
       if (req.param('dogAge')) {
         req.session.dogAge = req.param('dogAge');
+      }
+      if (req.param('dogImage1')) {
+        req.session.dogImage1 = req.param('dogImage1');
+      }
+      if (req.param('dogImage2')) {
+        req.session.dogImage2 = req.param('dogImage2');
       }
       res.header('Cache-Control', 'no-cache, max-age=0, must-revalidate, no-store');
       res.redirect('/cache-control-final');

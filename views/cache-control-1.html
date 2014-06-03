@@ -15,12 +15,21 @@
         Last name
         <input type="text" autocomplete="off" name="lastName" id="lastName" value="{{lastName}}" />
       </label>
-      <label for="age">
-        Age
-        <input type="text" autocomplete="off" name="age" id="age" value="{{age}}" />
-      </label>
+      <fieldset>
+        <label for="selfImage1">
+          The man
+          <input type="radio" name="selfImage" id="selfImage1" value="The man" {{selfImage1}} />
+        </label>
+        <label for="selfImage2">
+          Not the man
+          <input type="radio" name="selfImage" id="selfImage2" value="Not the man" {{selfImage2}} />
+        </label>
+      </fieldset>
       <input type="submit" value="Continue" />
     </form>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(window).unload(function(){}); // Does nothing but break the bfcache
+    </script>
   </body>
 </html>

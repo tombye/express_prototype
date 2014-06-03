@@ -15,8 +15,21 @@
         Age
         <input type="text" autocomplete="off" name="dogAge" id="dogAge" value="{{dogAge}}" />
       </label>
+      <fieldset>
+        <label for="dogImage1">
+          He's annoying
+          <input type="checkbox" name="dogImage1" id="dogImage1" value="annoying" {{dogImage1}} />
+        </label>
+        <label for="dogImage2">
+          He chases cars
+          <input type="checkbox" name="dogImage2" id="dogImage2" value="carChaser" {{dogImage2}} />
+        </label>
+      </fieldset>
       <input type="submit" value="Continue" />
     </form>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(window).unload(function(){}); // Does nothing but break the bfcache
+    </script>
   </body>
 </html>

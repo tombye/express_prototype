@@ -14,5 +14,8 @@
       <p>His name: {{dogName}}</p>
       <p>His age: {{dogAge}}</p>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(window).unload(function(){}); // Does nothing but break the bfcache
+    </script>
   </body>
 </html>
