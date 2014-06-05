@@ -29,12 +29,19 @@
     </form>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript">
-      $(window).unload(function(){}); // Does nothing but break the bfcache
-      $('input[type="radio"], input[type="checkbox"]')
-        .filter('[checked]')
-        .each(function () {
-          this.checked = 'checked';
-        });
+      window.addEventListener('unload', function(){}, false); // Does nothing but break the bfcache
+      var controls,
+          idx;
+
+      if (typeof document.querySelectorAll !== 'undefined') { 
+        controls = document.querySelectorAll('input[type="radio"], input[type="checkbox"]');
+        idx = controls.length;
+        while (idx--) {
+          if (controls[idx].getAttribute('checked') !== null) {
+            controls[idx].checked = 'checked';
+          }
+        }
+      }
     </script>
   </body>
 </html>
